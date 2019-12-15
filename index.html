@@ -8,14 +8,14 @@
   <tr>
     <th></th>
     <? ['月', '火', '水', '木', '金'].forEach(function(youbi) { ?>
-      <th colspan="3"><?= youbi ?></th>
+      <th colspan="4"><?= youbi ?></th>
     <? }); ?>
   </tr>
   
   <tr>
     <td></td>
     <? for (var youbi = 1; youbi <= 5; youbi++) { ?>
-      <td width="100px">1年</td><td width="100px">2年</td><td width="100px">3年</td>
+      <td width="5%">1年</td><td width="5%">2年</td><td width="5%">3年</td><td width="5%">4年</td>
     <? } ?>
   </tr>
   
@@ -23,7 +23,7 @@
     <tr>
     <td><?= jigen ?></td>
     <? ['月', '火', '水', '木', '金'].forEach(function(youbi) { ?>
-      <? for (var gakunen = 1; gakunen <= 3; gakunen++) { ?>
+      <? for (var gakunen = 1; gakunen <= 4; gakunen++) { ?>
         <td>
           <? tt[jiki][youbi][gakunen][jigen].split("\n").forEach(function(e) { ?>
             <? e.split(",").forEach(function(ee) { ?>
