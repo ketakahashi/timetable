@@ -1,0 +1,41 @@
+<? var tt = getData(); ?>
+
+<? ['前', '後'].forEach(function(jiki) { ?>
+
+<h2><?= jiki ?>期</h2>
+
+<table border="1" style="font-size:7pt;">
+  <tr>
+    <th></th>
+    <? ['月', '火', '水', '木', '金'].forEach(function(youbi) { ?>
+      <th colspan="3"><?= youbi ?></th>
+    <? }); ?>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <? for (var youbi = 1; youbi <= 5; youbi++) { ?>
+      <td width="100px">1年</td><td width="100px">2年</td><td width="100px">3年</td>
+    <? } ?>
+  </tr>
+  
+  <? for (var jigen = 1; jigen <= 5; jigen++) { ?>
+    <tr>
+    <td><?= jigen ?></td>
+    <? ['月', '火', '水', '木', '金'].forEach(function(youbi) { ?>
+      <? for (var gakunen = 1; gakunen <= 3; gakunen++) { ?>
+        <td>
+          <? tt[jiki][youbi][gakunen][jigen].split("\n").forEach(function(e) { ?>
+            <? e.split(",").forEach(function(ee) { ?>
+              <?= ee ?>
+            <? }); ?>
+            <br>
+          <? }); ?>
+        </td>
+      <? } ?>
+    <? }); ?>
+    </tr>
+  <? } ?>
+</table>
+
+<? }); ?>
